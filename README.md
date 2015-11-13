@@ -1,6 +1,6 @@
 # The Answer Engine
 
-Collection of Answerer algorithms for answering English-language questions of a given 
+Collection of Answerer algorithms for answering English-language questions of a given
 grammatical form.
 
 
@@ -54,5 +54,3 @@ The class must properly handle all the questions in the `examples.txt` file in i
 * `Answerer::answer_question($question)` returns a string with a correct answer to the question.
 
 Have a look at any existing algorithm for examples.
-
-
