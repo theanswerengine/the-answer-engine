@@ -25,16 +25,20 @@ class ComputeSimpleArithmetic implements Answerer {
         $operand_1 = intval($question[2]);
         $operand_2 = intval($question[4]);
 
+        $retval = false;
         if ($operation == 'plus' || $operation == '+') {
-            return $operand_1 + $operand_2;
+            $retval = $operand_1 + $operand_2;
         } else if ($operation == 'minus' || $operation == '-') {
-            return $operand_1 - $operand_2;
+            $retval = $operand_1 - $operand_2;
         } else if ($operation == 'over' || $operation == '/') {
-            return $operand_1 / $operand_2;
+            $retval = $operand_1 / $operand_2;
         } else if ($operation == 'times' || $operation == '*') {
-            return $operand_1 * $operand_2;
+            $retval = $operand_1 * $operand_2;
         }
 
-        return false; // something went horribly wrong
+        if ($retval !== false) {
+            $retval = strval($retval);
+        }
+        return $retval;
     }
 }
