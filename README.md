@@ -1,28 +1,34 @@
 # The Answer Engine
 
-Collection of Answerer algorithms for answering English-language questions of a given
+Collection of algorithms for answering English-language questions of a given
 grammatical form.
 
 
 ## About
-At The Answer Engine you can ask a question in natural English and get an answer.
-The site determines the parts of speech from your question and inputs your
-question into the algorithm written for questions of that form.
+Ask a question in natural English and get an answer.
+
+[The Answer Engine][theae] first determines the parts of speech in your question using
+the [CLAWS part-of-speech tagger][claws], then all the algorithms ever written for questions
+in that format generate answers. This is that repository.
 
 ## How to use
 
-Ask any question at The Answer Engine.
+[Ask a question][theae].
 
 ## How to contribute
 
-Fork this repo, write the Answerer you want to write, and submit a pull request.
+Write an algorithm! The easiest way to get started is to [ask a question][theae]. The site will create a branch
+for your question type and give you a link to it. Fork this repo, write the algorithm, and submit a pull request.
 
-* Answerer algorithm files be written in PHP 5.6.
-* They must define a class that `implement`s the `Answerer` interface.
+### Coding an algorithm
+
+* Answerer algorithms must be written in PHP 5.6.
+* They must define a class that implements the `Answerer` interface.
 * The class name must describe the Answerer's behavior. E.g.:
 
-    `class WikiThenSearchForSentences implements Answerer`
-* The file name must be the same as the class name. E.g.: `WikiThenSearchForSentences.php`
+    `class ComputesBasicArithmetic implements Answerer`
+* The file name must be the same as the class name. E.g.: `ComputesBasicArithmetic.php`.
+* Any files beside this class file should be in a folder named after the class name. E.g.: `ComputesBasicArithmetic/`.
 
 ### The `Answerer` interface
 
@@ -53,5 +59,7 @@ The class must properly handle all the questions in the `examples.txt` file in i
 * `Answerer::check_question($question)` returns `false`, or
 * `Answerer::answer_question($question)` returns a string with a correct answer to the question.
 
-Have a look at any existing algorithm for examples.
+Have a look at any existing algorithm for examples. An automated tester is on the todo list and will be run as part of pull request approval.
 
+[theae]: http://www.theanswerengine.net
+[claws]: http://ucrel.lancs.ac.uk/claws/
