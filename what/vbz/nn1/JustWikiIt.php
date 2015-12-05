@@ -33,7 +33,7 @@ class JustWikiIt implements Answerer {
 
         $matches = array();
         preg_match_all("/(?i)($noun )(\(.*\) )?(is|was) (.*?)\./", $text, $matches);
-        
+
         foreach ($matches[0] as $match) {
             $answer .= $match ." ";
         }
