@@ -2,7 +2,7 @@
 /* 
 what / vbz / mc / ii / mc / 
 what / is / cardinal number,neutral for number (two, three..) / general preposition / cardinal number,neutral for number (two, three..) / 
-*/
+ */
 
 class ComputeSimpleArithmetic implements Answerer {
     public static function check_question(array $question) {
@@ -34,5 +34,7 @@ class ComputeSimpleArithmetic implements Answerer {
         } else if ($operation == 'times' || $operation == '*') {
             return $operand_1 * $operand_2;
         }
+
+        return false; // something went horribly wrong
     }
 }
