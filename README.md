@@ -1,6 +1,6 @@
 # The Answer Engine
 
-Collection of algorithms for answering English-language questions of a given
+Collection of micro-algorithms for answering English-language questions of a given
 grammatical form.
 
 
@@ -20,9 +20,9 @@ in that format generate answers. This is that repository.
 Write an algorithm! The easiest way to get started is to [ask a question][theae]. The site will create a branch
 for your question type and give you a link to it. Fork this repo, write the algorithm, and submit a pull request.
 
-### Coding an algorithm
+### Coding a micro-algorithm
 
-* Answerer algorithms must be written in PHP 5.6.
+* Algorithm code must be written in PHP 5.6.
 * They must define a class that implements the `Answerer` interface.
 * The class name must describe the Answerer's behavior. E.g.:
 
