@@ -1,44 +1,43 @@
 # The Answer Engine
 
-Collection of micro-algorithms for answering English-language questions of a given
-grammatical form.
+Micro-algorithms for answering English-language questions of a given grammatical form.
 
 
 ## About
 Ask a question in natural English and get an answer.
 
 [The Answer Engine][theae] first determines the parts of speech in your question using
-the [CLAWS part-of-speech tagger][claws], then all the algorithms ever written for questions
-in that format generate answers. This is that repository.
+the [CLAWS part-of-speech tagger][claws]. Then all the algorithms ever written for a question
+of that specific format are run on your question and return their answers. This is the repository
+of those algorithms, which you can contribute to.
 
-## How to use
+## How to use The Answer Engine
 
 [Ask a question][theae].
 
-## How to contribute
+## How to contribute a micro-algorithm
 
-Write an algorithm! The easiest way to get started is to [ask a question][theae]. The site will create a branch
-for your question type and give you a link to it. Fork this repo, write the algorithm, and submit a pull request.
+The easiest way to contribute to the engine is to [ask a question][theae]. The site will help you create
+some boilerplate code on a branch made just for you, and then give you a link to it. Then you just fork this
+repo, update your code, and submit a pull request.
 
-### Coding a micro-algorithm
+### Micro-algorithm code
 
-* Algorithm code must be written in PHP 5.6.
-* They must define a class that implements the `Answerer` interface.
-* The class name must describe the Answerer's behavior. E.g.:
-
-    `class ComputesBasicArithmetic implements Answerer`
-* The file name must be the same as the class name. E.g.: `ComputesBasicArithmetic.php`.
-* Any files beside this class file should be in a folder named after the class name. E.g.: `ComputesBasicArithmetic/`.
+* Micro-algorithms must be written in PHP 5.6.
+* They must define a single class that implements the `Answerer` interface.
+* The file name must match the class name. E.g.: `ComputesBasicArithmetic.php`.
+* The class name must describe the algorithm's behavior. E.g.: `class ComputesBasicArithmetic implements Answerer`
+* Additional files (if any) must be in a folder matching the class name. E.g.: `ComputesBasicArithmetic/`.
 
 ### The `Answerer` interface
 
-The stuff your `Answerer` class has to do.
+The micro-algorithm's `Answerer` interface requires the following class methods be defined.
 
 #### `public static function check_question(array $question)`
 
 Parameter `$question`: ordered array of the words in the question
 
-Return:
+Returns:
 
 * (boolean) `true` if the algorithm can answer `$question`
 * (boolean) `false` if the algorithm can not
@@ -47,7 +46,7 @@ Return:
 
 Parameter `$question`: ordered array of the words in the question
 
-Return:
+Returns:
 
 * (string) the answer
 * (boolean) `false` if the algorithm can not answer `$question`
@@ -57,9 +56,11 @@ Return:
 The class must properly handle all the questions in the `examples.txt` file in its directory. For each line in `examples.txt`, either:
 
 * `Answerer::check_question($question)` returns `false`, or
-* `Answerer::answer_question($question)` returns a string with a correct answer to the question.
+* `Answerer::answer_question($question)` returns `false`, or
+* `Answerer::answer_question($question)` returns a string with a valid answer to the question.
 
-Have a look at any existing algorithm for examples. An automated tester is on the todo list and will be run as part of pull request approval.
+Have a look at any existing algorithm for examples. An automated tester is on my
+todo list and will be run as part of any pull request merge.
 
 [theae]: http://www.theanswerengine.net
 [claws]: http://ucrel.lancs.ac.uk/claws/
