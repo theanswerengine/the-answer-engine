@@ -17,7 +17,7 @@ class AboutTheAnswerEngine implements Answerer {
             $question[1] == "is" && 
             $question[2] == "the" && 
             $question[3] == "answer" && 
-            $question[4] == "engine?") {
+            $question[4] == "engine") {
             return true;
         }
 
