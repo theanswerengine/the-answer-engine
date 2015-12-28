@@ -20,6 +20,8 @@ class AboutTheAnswerEngine implements Answerer {
             $question[4] == "engine?") {
             return true;
         }
+
+        return false;
     }
 
     /**
