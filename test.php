@@ -17,6 +17,7 @@ interface Answerer {
 }
 
 $test_file = $argv[1] or die(usage());
+$test_dir = dirname($test_file);
 $test_class = basename($test_file, '.php');
 
 
@@ -27,10 +28,10 @@ if (!class_exists($test_class)) {
     die("File named $test_file does not define a class named $test_class.");
 }
 
-echo "Reading ./examples.txt.\n";
-if (is_readable("./examples.txt")) {
+echo "Reading $test_dir/examples.txt.\n";
+if (is_readable("$test_dir/examples.txt")) {
 
-    $examples_file = file("./examples.txt");
+    $examples_file = file("$test_dir/examples.txt");
 
     $test_count_success = 0;
     $test_count_failure = 0;
