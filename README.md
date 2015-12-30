@@ -59,8 +59,17 @@ The class must properly handle all the questions in the `examples.txt` file in i
 * `Answerer::answer_question($question)` returns `false`, or
 * `Answerer::answer_question($question)` returns a string with a valid answer to the question.
 
-Have a look at any existing algorithm for examples. An automated tester is on my
-todo list and will be run as part of any pull request merge.
+Have a look at any existing algorithm for examples.
+
+#### Automated tester
+The `test.php` script here in the root of this repository will automatically test your algorithm for you.
+Usage:
+
+```
+php -f test.php <algorithm file>		# usage
+php -f test.php what/vbz/nn1/JustWikiIt.php	# example
+```
+
 
 [theae]: http://www.theanswerengine.net
 [claws]: http://ucrel.lancs.ac.uk/claws/
