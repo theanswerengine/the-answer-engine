@@ -37,7 +37,7 @@ The micro-algorithm's `Answerer` interface requires the following class methods 
 
 Parameter `$question`: ordered array of the words in the question
 
-Returns:
+Return values:
 
 * (boolean) `true` if the algorithm can answer `$question`
 * (boolean) `false` if the algorithm can not
@@ -46,14 +46,15 @@ Returns:
 
 Parameter `$question`: ordered array of the words in the question
 
-Returns:
+Return values:
 
 * (string) the answer
 * (boolean) `false` if the algorithm can not answer `$question`
 
 ### Test cases
 
-The class must properly handle all the questions in the `examples.txt` file in its directory. For each line in `examples.txt`, either:
+The class must properly handle all the questions in the `examples.txt` file in its directory. One of the following must be true
+for each line in the examples file:
 
 * `Answerer::check_question($question)` returns `false`, or
 * `Answerer::answer_question($question)` returns `false`, or
@@ -62,7 +63,7 @@ The class must properly handle all the questions in the `examples.txt` file in i
 Have a look at any existing algorithm for examples.
 
 #### Automated tester
-The `test.php` script here in the root of this repository will automatically test your algorithm for you.
+The `test.php` script in the root of this repository will automatically test your algorithm for you.
 Usage:
 
 ```
