@@ -66,8 +66,8 @@ The `test.php` script here in the root of this repository will automatically tes
 Usage:
 
 ```
-php -f test.php <algorithm file>		# usage
-php -f test.php what/vbz/nn1/JustWikiIt.php	# example
+php -f test.php <algorithm file>               # usage
+php -f test.php what/vbz/nn1/JustWikiIt.php    # example
 ```
 
 
