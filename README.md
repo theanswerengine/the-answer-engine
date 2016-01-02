@@ -38,7 +38,7 @@ The micro-algorithm's `Answerer` interface requires the following class methods 
 
 Parameter `$question`: ordered array of the words in the question
 
-Returns:
+Return values:
 
 * (boolean) `true` if the algorithm can answer `$question`
 * (boolean) `false` if the algorithm can not
@@ -47,7 +47,7 @@ Returns:
 
 Parameter `$question`: ordered array of the words in the question
 
-Returns:
+Return values:
 
 * (string) the answer
 * (boolean) `false` if the algorithm can not answer `$question`
@@ -61,8 +61,17 @@ the master branch. For each line in `examples.txt`:
 * `Answerer::answer_question($question)` must return `false`, OR
 * `Answerer::answer_question($question)` must return a string (with a valid answer to the question).
 
-Have a look at any existing algorithm for examples. An automated tester is on my
-todo list and will be run as part of any pull request merge.
+Have a look at any existing algorithm for examples.
+
+#### Automated tester
+The `test.php` script in the root of this repository will automatically test your algorithm for you.
+Usage:
+
+```
+php -f test.php <algorithm file>               # usage
+php -f test.php what/vbz/nn1/JustWikiIt.php    # example
+```
+
 
 [theae]: http://www.theanswerengine.net
 [claws]: http://ucrel.lancs.ac.uk/claws/
