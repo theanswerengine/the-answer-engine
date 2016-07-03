@@ -36,7 +36,7 @@ if (is_readable("$test_dir/examples.txt")) {
     $test_count_success = 0;
     $test_count_failure = 0;
     foreach ($examples_file as $example) {
-        $example = trim($example);
+        $example = str_replace(array('.', ',', '?', "\n"), '', trim($example));
         $example_arr = explode(' ', $example);
         if ($example_arr) {
             echo "Test question: '$example' - Answer...\n";
