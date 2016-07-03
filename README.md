@@ -69,7 +69,7 @@ Usage:
 
 ```
 php -f test.php <algorithm file>               # usage
-php -f test.php what/vbz/nn1/JustWikiIt.php    # example
+php -f test.php what/vbz/nn/JustWikiIt.php     # example
 ```
 
 
